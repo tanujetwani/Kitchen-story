@@ -1,0 +1,42 @@
+
+<h1>Your Order Details with breakout of order and payment details are as follows:</h1>
+
+<table border="1">
+
+<tr>
+
+<th>ItemId</th>
+<th>Item Name</th>
+<th>Category</th>
+<th>Brand</th>
+<th>Description</th>
+<th>PricePerKg</th>
+<th>Quantity</th>
+<th>Amount of Item</th>
+
+</tr>
+
+<tr *ngFor="let item of cart">
+
+<td>{{item.kitem.pid}}</td>
+<td>{{item.kitem.pname}}</td>
+<td>{{item.kitem.category}}</td>
+<td>{{item.kitem.brand}}</td>
+<td>{{item.kitem.description}}</td>
+<td>{{item.kitem.priceperkg | currency : "INR"}}</td>
+<td>{{item.qty}}</td>
+<td>{{item.kitem.priceperkg*item.qty | currency : "INR"}}</td>
+
+</tr>
+
+</table>
+<br>
+<h2>Total amount to be paid:{{total_amt | currency :"INR"}}</h2>
+
+<br><br><br>
+<button (click)="pay()">Pay the Amount</button>
+
+
+
+
+

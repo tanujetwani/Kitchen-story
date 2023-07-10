@@ -1,0 +1,21 @@
+<h2>User Registration Form</h2>
+
+<form>
+
+    Username: <input type="text" name="name" [(ngModel)]="user.uname"><br><br>
+    Password: <input type="password" name="pwd" [(ngModel)]="user.upasswd"><br><br>
+    Phone No.: <input type="text" name="phone" [(ngModel)]="user.uphone"><br><br>
+    Address: <input type="text" name="address" maxlength="50" [(ngModel)]="user.uaddress"><br><br>
+    User Type:<select name="userType" [(ngModel)]="user.userType">
+              <option value="Customer">Customer</option>
+              <option value="Admin">Admin</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Register" (click)="registerNow()">
+</form>
+
+<br>
+<b>{{message}}</b>
+
+
+

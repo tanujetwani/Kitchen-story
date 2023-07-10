@@ -1,0 +1,34 @@
+<h1>Cart of User {{viewCartUser.uname}}</h1>
+
+<table border="1">
+<tr>
+    <th>Item Id</th>
+    <th>Item Name</th>
+    <th>Category</th>
+    <th>Brand</th>
+    <th>Description</th>
+    <th>PricePerKg</th>
+    <th>Quantity</th>
+</tr>
+
+<tr *ngFor="let item of cart">
+
+<td>{{item.kitem.pid}}</td>
+<td>{{item.kitem.pname}}</td>
+<td>{{item.kitem.category}}</td>
+<td>{{item.kitem.brand}}</td>
+<td>{{item.kitem.description}}</td>
+<td>{{item.kitem.priceperkg | currency :"INR"}}</td>
+<td>{{item.qty}}</td>
+
+
+
+</tr>
+
+</table>
+
+<br><br><br>
+<button (click)="searchform()">Go Back to Search Form</button>
+
+<br><br><br>
+<button (click)="buyitems()">Buy the Items</button>

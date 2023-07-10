@@ -1,0 +1,27 @@
+<h1>Remove Food Item By Name</h1>
+Name:<input type="text" name="name" [(ngModel)]="name"><br><br>
+<button (click)="removeitembyname()">Remove Food Item</button>
+<br><br>
+<h2>Remove Food Item By Category</h2>
+Category:<select name="category" [(ngModel)]="category">
+    <option value="Dal And Pulses">Dal And Pulses</option>
+    <option value="Spices">Spices</option>
+    <option value="Nuts">Nuts</option>
+    <option value="Milk Products">Milk Products</option>
+    <option value="Biscuits And Namkeens">Biscuits And Namkeens</option>
+    </select>
+    <br><br>
+ <button (click)="removeitembycat()">Remove Food Item</button>
+ <br><br>
+ <h2>Remove Food Item By Id</h2>
+ Id:<input type="number" name="id" [(ngModel)]="id">
+ <br><br>
+ <button (click)="removeitembyid()">Remove Food Item</button>
+ <br><br>
+ <h3 style="color:red">{{message}}</h3>
+ <br><br>
+ <button (click)="gotoadminpage()">Go back to Admin Home page</button>
+
+
+
+

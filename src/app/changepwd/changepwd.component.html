@@ -1,0 +1,11 @@
+<h1>Change Admin password of user {{user.uname}}</h1>
+
+New Password:<input type="password" name="pwd" [(ngModel)]="password"><br><br>
+Confirm New Password:<input type="password" [(ngModel)]="confirmpwd"><br><br>
+<button (click)="changepwd()">Change Password</button>
+<br><br>
+<b>{{message}}</b>
+
+<br><br>
+<button (click)="gotoadminpage()">Go Back to Admin Home Page</button>
+

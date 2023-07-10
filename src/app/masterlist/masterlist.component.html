@@ -1,0 +1,35 @@
+<h1>Master List of Food Items Available for purchase</h1>
+
+<table border="1">
+
+<tr>
+   <th>Item Id</th>
+   <th>Item name</th>
+   <th>Category</th>
+   <th>Brand</th>
+   <th>Description</th>
+   <th>Price Per Kg</th>
+
+</tr>
+
+<tr *ngFor="let item of items">
+
+    <td>{{item.pid}}</td>
+    <td>{{item.pname}}</td>
+    <td>{{item.category}}</td>
+    <td>{{item.brand}}</td>
+    <td>{{item.description}}</td>
+    <td>{{item.priceperkg | currency :"INR"}}</td>
+
+
+</tr>
+
+
+
+</table>
+
+<br><br><br>
+<button (click)="gotoadminpage()">Go Back to Admin Home Page</button>
+
+
+

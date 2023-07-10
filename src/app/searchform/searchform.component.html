@@ -1,0 +1,77 @@
+<div *ngIf="!searchResult">
+
+<h1>Welcome {{user.uname}} to the Search form for purchasing Food Items</h1>
+
+<form>
+  
+  Category :<select name="category" [(ngModel)]="item.category">
+             <option value="Dal And Pulses">Dal And Pulses</option>
+             <option value="Spices">Spices</option>
+             <option value="Nuts">Nuts</option>
+             <option value="Milk Products">Milk Products</option>
+             <option value="Biscuits And Namkeens">Biscuits And Namkeens</option>
+             <option value="None">None</option>
+             </select>
+   <br><br>            
+  Brand :<input type="text" name="brand" maxlength="50" [(ngModel)]="item.brand"><br><br>
+  <input type="submit" value="Search Food Items" (click)="searchFoodItems()">
+
+
+</form>
+<br><br>
+<b>{{message}}</b>
+<br><br><br>
+<button (click)="viewCart()">View Cart</button>
+</div>
+
+
+<div *ngIf="searchResult">
+  <br><br><br><br>
+  <h2>Search Results</h2>
+
+  
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Category</th>
+<th>Description</th>
+<th>Brand</th>
+<th>PricePerkg</th>
+
+</tr>
+
+<tr *ngFor="let fooditem of item1">
+  
+    <td>{{fooditem.pid}}</td>
+    <td>{{fooditem.pname}}</td>
+    <td>{{fooditem.category}}</td>
+    <td>{{fooditem.description}}</td>
+    <td>{{fooditem.brand}}</td>
+    <td>{{fooditem.priceperkg | currency :"INR"}}</td>
+    <td><button (click)="addtocart(fooditem.pid, fooditem.pname)" >Add To Cart</button></td>
+    <td><button (click)="removefromcart(fooditem.pid)">Remove From Cart</button></td>
+
+
+
+
+</tr>
+
+</table>
+
+<br><br>
+<b>{{message1}}</b>
+<b>{{cartmessage}}</b>
+
+<br><br><br>
+<button (click)="viewCart()">View Cart Details</button>
+<br><br><br>
+
+
+
+<button (click)="bkToSearch()">Go Back To Search form</button>
+</div>
+
+
+
+

@@ -1,0 +1,30 @@
+<h1>Add Food Item</h1>
+
+Name of Food Item: <input type="text" name="itemname" maxlength="50" [(ngModel)]="kitem.pname"><br><br>
+Category:<select name="category" [(ngModel)]="kitem.category">
+    <option value="Dal And Pulses">Dal And Pulses</option>
+    <option value="Spices">Spices</option>
+    <option value="Nuts">Nuts</option>
+    <option value="Milk Products">Milk Products</option>
+    <option value="Biscuits And Namkeens">Biscuits And Namkeens</option>
+    </select>
+<br><br>
+Brand:<input type="text" name="brand" maxlength="50" [(ngModel)]="kitem.brand"><br><br>
+Description:<input type="text" name="description" maxlength="50" [(ngModel)]="kitem.description"><br><br>
+Price Per Kg (Rs) :<input type="text" name="price" [(ngModel)]="kitem.priceperkg"><br><br>
+<button (click)="addfooditem()">Add Food Item</button><br><br>
+
+<b>{{message}}</b>
+<br><br>
+<div *ngIf="addeditem">
+
+<button (click)="addanotheritem()">Add Another Food Item</button>
+
+
+</div>
+
+<br><br>
+<button (click)="gotoadminpage()">Go Back To Admin Home Page</button>
+
+
+

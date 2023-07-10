@@ -1,0 +1,67 @@
+<h1>Hi {{user.uname}}, Your Order is confirmed.</h1>
+<h2>Order Details are as follows</h2>
+
+<table border="1">
+
+<tr>
+<th>Order Id</th>
+<th>Order Date</th>
+<th>Total Amount to be paid</th>
+
+</tr>
+
+<tr *ngFor="let ordDetails of userJson">
+
+    <td><b>{{ordDetails.order_id}}</b></td>
+    <td><b>{{ordDetails.order_date}}</b></td>
+    <td><b>{{ordDetails.total_amt | currency :"INR" }}</b></td>
+</tr>
+
+</table>
+
+<br><br><br>
+
+<h1>Breakout of the above Order is below</h1>
+
+<table border="1">
+<tr>
+
+    <th>ItemId</th>
+    <th> Item name</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Brand</th>
+    <th>PricePerKg</th>
+    <th>Quantity</th>
+    <th>Amount of Item</th>
+
+</tr>
+
+<tr *ngFor="let order of orderDetails">
+
+<td>{{order.kitchenitem.pid}}</td>
+<td>{{order.kitchenitem.pname}}</td>
+<td>{{order.kitchenitem.description}}</td>
+<td>{{order.kitchenitem.category}}</td>
+<td>{{order.kitchenitem.brand}}</td>
+<td>{{order.kitchenitem.priceperkg | currency :"INR"}}</td>
+<td>{{order.qty}}</td>
+<td>{{order.kitchenitem.priceperkg* order.qty | currency :"INR"}}</td>
+
+
+</tr>
+
+</table> 
+
+<!--{{orderDetails|async}}  -->
+
+<!--{{orderDetails | valuearray}}  -->
+<br><br>
+<h2>Total amount paid: {{total_amt | currency :"INR"}}</h2>
+
+
+<h2>Thanks for Shopping!!</h2>
+
+
+
+

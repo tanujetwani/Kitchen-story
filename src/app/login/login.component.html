@@ -1,0 +1,26 @@
+<!--<div *ngIf="!signin"> -->
+
+<h1>Sign In </h1>
+
+<form>
+  Username:<input type="text" name="name" [(ngModel)]="uname"><br><br>
+  Password :<input type="password" name="pwd" [(ngModel)]="pwd"><br><br>
+  <input type="submit" value="Sign In" (click)="login()">
+
+
+</form>
+
+<b>{{message}}</b>
+
+<!--</div>
+
+
+<div *ngIf="signin">
+
+<app-searchform></app-searchform>
+
+
+
+</div> -->
+
+
